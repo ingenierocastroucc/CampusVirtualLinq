@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusVirtualLinq", "CampusVirtualLinq\CampusVirtualLinq.csproj", "{E76AEB42-E384-431C-A546-E084983C0F00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusVirtualLinq", "CampusVirtualLinq\CampusVirtualLinq.csproj", "{168E6418-6C33-4A38-A2C5-809054EE0B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E76AEB42-E384-431C-A546-E084983C0F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E76AEB42-E384-431C-A546-E084983C0F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E76AEB42-E384-431C-A546-E084983C0F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E76AEB42-E384-431C-A546-E084983C0F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168E6418-6C33-4A38-A2C5-809054EE0B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168E6418-6C33-4A38-A2C5-809054EE0B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168E6418-6C33-4A38-A2C5-809054EE0B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168E6418-6C33-4A38-A2C5-809054EE0B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3AD4E32E-3BF4-4AFB-8140-FA97BE1C24C3}
+		SolutionGuid = {21264D97-80F9-4200-9E71-B3475B0F618A}
 	EndGlobalSection
 EndGlobal
