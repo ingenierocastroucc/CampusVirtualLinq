@@ -1,6 +1,6 @@
 # CampusVirtualLINQ
-Contiene codigo LINQ para plataforma de ventas CampusVirtual[ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
-> Esta version inicial LINQ de la plataforma web de CampusVirtual.
+Contiene codigo C# LINQ para plataforma CampusVirtual[ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
+> Esta version inicial LINQ de la plataforma CampusVirtual.
 > - developer
 
 ## En este repo podras encontrar contenido LINQ
