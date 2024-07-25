@@ -5,7 +5,7 @@ Contiene codigo C# para LINQ:
 * .NET EntityFramework
 * Modelos
 * Operadores LINQ
-* Clausulas ÑINQ
+* Clausulas LINQ
 * Perfil profesional: [ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
 
 ## En este repo podras encontrar contenido C# LINQ
