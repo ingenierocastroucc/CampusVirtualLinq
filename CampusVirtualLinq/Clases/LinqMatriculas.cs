@@ -12,8 +12,6 @@ namespace CampusVirtualLinq.Clases
 
         public LinqMatriculas()
         {
-            //string filePath = @"C:\Users\Pedro Castro\Desktop\PRUEBASTECNICAS\CURSOS\PLATZI\LINQ\CampusVirtualLinq\CampusVirtualLinq\Matriculas.json";
-
             using (StreamReader reader = new StreamReader("Matriculas.json"))
             {
                 string json = reader.ReadToEnd();
