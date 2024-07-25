@@ -1,0 +1,164 @@
+[
+  {
+    "matriculaId": 1,
+    "asignaturaId": 1,
+    "nombreAsignatura": "Calculo",
+    "profesor": "Pedro Diaz",
+    "fechaRegistro": "2024-07-23",
+    "url": "https://images.stockcake.com/public/5/a/a/5aa8e811-bedb-4f54-be97-98c92576b8d1_large/vintage-calculation-devices-stockcake.jpg",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Daniel Castillo",
+    "estudianteId": 1
+  },
+  {
+    "matriculaId": 1,
+    "asignaturaId": 2,
+    "nombreAsignatura": "SQL",
+    "profesor": "Diana Diaz",
+    "fechaRegistro": "2024-07-16",
+    "url": "https://img.freepik.com/vector-gratis/composicion-isometrica-servicios-nube-personajes-trabajadores-gabinete-carpetas-e-ilustracion-vector-capsula-servidor_1284-65980.jpg?t=st=1721789266~exp=1721792866~hmac=c867ab971d31e4b846d0fd0dfd482ea861b026d05e478cadfcf203c1480643f1&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Daniel Castillo",
+    "estudianteId": 1
+  },
+  {
+    "matriculaId": 1,
+    "asignaturaId": 3,
+    "nombreAsignatura": "C#",
+    "profesor": "Roberto Duran",
+    "fechaRegistro": "2024-07-23",
+    "url": "https://img.freepik.com/vector-gratis/desarrollo-aplicaciones-escritorio-telefonos-inteligentes_23-2148683810.jpg?t=st=1721789379~exp=1721792979~hmac=e861c4cc7dcb722ec3d7541a8da5225c2bdef817b808efcf798f428234827d05&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 1,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Daniel Castillo",
+    "estudianteId": 1
+  },
+  {
+    "matriculaId": 2,
+    "asignaturaId": 1,
+    "nombreAsignatura": "Calculo",
+    "profesor": "Pedro Diaz",
+    "fechaRegistro": "2024-07-16",
+    "url": "https://images.stockcake.com/public/5/a/a/5aa8e811-bedb-4f54-be97-98c92576b8d1_large/vintage-calculation-devices-stockcake.jpg",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Andrea Carvajal",
+    "estudianteId": 2
+  },
+  {
+    "matriculaId": 2,
+    "asignaturaId": 2,
+    "nombreAsignatura": "SQL",
+    "profesor": "Diana Diaz",
+    "fechaRegistro": "2024-07-16",
+    "url": "https://img.freepik.com/vector-gratis/composicion-isometrica-servicios-nube-personajes-trabajadores-gabinete-carpetas-e-ilustracion-vector-capsula-servidor_1284-65980.jpg?t=st=1721789266~exp=1721792866~hmac=c867ab971d31e4b846d0fd0dfd482ea861b026d05e478cadfcf203c1480643f1&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Andrea Carvajal",
+    "estudianteId": 2
+  },
+  {
+    "matriculaId": 2,
+    "asignaturaId": 3,
+    "nombreAsignatura": "C#",
+    "profesor": "Roberto Duran",
+    "fechaRegistro": "2024-07-23",
+    "url": "https://img.freepik.com/vector-gratis/desarrollo-aplicaciones-escritorio-telefonos-inteligentes_23-2148683810.jpg?t=st=1721789379~exp=1721792979~hmac=e861c4cc7dcb722ec3d7541a8da5225c2bdef817b808efcf798f428234827d05&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 1,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Bairon Duvan",
+    "estudianteId": 3
+  },
+  {
+    "matriculaId": 3,
+    "asignaturaId": 1,
+    "nombreAsignatura": "Calculo",
+    "profesor": "Pedro Diaz",
+    "fechaRegistro": "2024-07-16",
+    "url": "https://images.stockcake.com/public/5/a/a/5aa8e811-bedb-4f54-be97-98c92576b8d1_large/vintage-calculation-devices-stockcake.jpg",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Bairon Duvan",
+    "estudianteId": 3
+  },
+  {
+    "matriculaId": 3,
+    "asignaturaId": 2,
+    "nombreAsignatura": "SQL",
+    "profesor": "Diana Diaz",
+    "fechaRegistro": "2024-07-16",
+    "url": "https://img.freepik.com/vector-gratis/composicion-isometrica-servicios-nube-personajes-trabajadores-gabinete-carpetas-e-ilustracion-vector-capsula-servidor_1284-65980.jpg?t=st=1721789266~exp=1721792866~hmac=c867ab971d31e4b846d0fd0dfd482ea861b026d05e478cadfcf203c1480643f1&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 3,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Bairon Duvan",
+    "estudianteId": 3
+  },
+  {
+    "matriculaId": 3,
+    "asignaturaId": 3,
+    "nombreAsignatura": "C#",
+    "profesor": "Roberto Duran",
+    "fechaRegistro": "2024-07-23",
+    "url": "https://img.freepik.com/vector-gratis/desarrollo-aplicaciones-escritorio-telefonos-inteligentes_23-2148683810.jpg?t=st=1721789379~exp=1721792979~hmac=e861c4cc7dcb722ec3d7541a8da5225c2bdef817b808efcf798f428234827d05&w=740",
+    "descripcionMatricula": "Estudiante de pregrado",
+    "estado": "Activo",
+    "semestreInscripcion": 1,
+    "prioridad": [
+      "Baja",
+      "Media",
+      "Alta"
+    ],
+    "estudiante": "Bairon Duvan",
+    "estudianteId": 3
+  }
+]

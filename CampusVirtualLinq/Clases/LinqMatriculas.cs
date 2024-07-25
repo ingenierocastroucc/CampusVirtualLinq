@@ -23,6 +23,19 @@ namespace CampusVirtualLinq.Clases
         {
             return matriculasColection;
         }
+        
+        //Operador where
+        public IEnumerable<Matriculas> MatriculasCalculo()
+        {
+            //Extension method
+            //return matriculasColection.Where(p=> p.NombreAsignatura == "Calculo");
+            //return matriculasColection.Where(p => p.SemestreInscripcion == 3 && p.Profesor == "Pedro Diaz");
+
+            //Query method
+            return from matriculas in matriculasColection where matriculas.SemestreInscripcion == 3
+            && matriculas.Profesor == "Pedro Diaz"
+            select matriculas;
+        }
     }
 }
 
