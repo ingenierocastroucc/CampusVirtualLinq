@@ -8,9 +8,9 @@ namespace CampusVirtualLinq.Clases
 {
     public class Matriculas
     {
-        public Guid MatriculaId { get; set; }
+        public int MatriculaId { get; set; }
 
-        public Guid AsignaturaId { get; set; }
+        public int AsignaturaId { get; set; }
 
         public string NombreAsignatura { get; set; }
 
@@ -30,7 +30,7 @@ namespace CampusVirtualLinq.Clases
 
         public string Estudiante { get; set; }
 
-        public string EstudianteId { get; set; }
+        public int EstudianteId { get; set; }
 
 
     }
