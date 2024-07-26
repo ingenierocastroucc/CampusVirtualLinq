@@ -89,18 +89,22 @@ void ImprimirAsignaturasSkip(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
+Console.WriteLine("Matriculas Select\n");
+var matriculasList = matriculas.MatriculasSelect();
+
 Console.WriteLine("Estado All\n");
 Console.WriteLine("¿Todas las matriculas tienen estado?:" + matriculas.MatriculasEstadoAll());
 
 Console.WriteLine("Semestre Any\n");
 Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
 
-Console.WriteLine("Matriculas Select\n");
-var matriculasList = matriculas.MatriculasSelect();
-
 Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo:" + matriculas.MatriculasCount());
 
 Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo 'LongCount':" + matriculas.MatriculasLongCount());
+
+Console.WriteLine("Fecha menor de registro de matricula, registrada:" + matriculas.MatriculasMin());
+
+Console.WriteLine("Fecha mayor de registro de matricula, registrada:" + matriculas.MatriculasMax());
 
 
 

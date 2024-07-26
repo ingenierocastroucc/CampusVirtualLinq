@@ -188,6 +188,22 @@ namespace CampusVirtualLinq.Clases
             //        orderby matriculas.Estudiante
             //        select matriculas).Count();
         }
+
+        //Operador Min
+        public string MatriculasMin()
+        {
+            //Extension method
+            var fechaRegsitro = matriculasColection.Min(p => p.FechaRegistro.ToShortDateString());
+            return fechaRegsitro;
+        }
+
+        //Operador Max
+        public string MatriculasMax()
+        {
+            //Extension method
+            var fechaRegsitro = matriculasColection.Max(p => p.FechaRegistro.ToShortDateString());
+            return fechaRegsitro;
+        }
     }
 }
 
