@@ -95,5 +95,8 @@ Console.WriteLine("¿Todas las matriculas tienen estado?:" + matriculas.Matricul
 Console.WriteLine("Semestre Any\n");
 Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
 
+Console.WriteLine("Matriculas Select\n");
+var matriculasList = matriculas.MatriculasSelect();
+
 
 

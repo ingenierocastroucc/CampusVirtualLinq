@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -128,6 +129,37 @@ namespace CampusVirtualLinq.Clases
                     where matriculas.NombreAsignatura == "C#"
                     orderby matriculas.Estudiante
                     select matriculas).Take(2).Skip(1);
+        }
+
+        public IEnumerable<Matriculas> MatriculasSelect()
+        {
+            //Query method
+            var resultado = matriculasColection.Select(p =>
+                                                new Matriculas
+                                                {
+                                                    NombreAsignatura = p.NombreAsignatura,
+                                                    Profesor = p.Profesor,
+                                                    Estudiante = p.Estudiante
+                                                }).ToList();
+            // Ancho máximo de las columnas para alinear el texto
+            int nombreAsignaturaWidth = resultado.Max(m => m.NombreAsignatura.Length) + 20; // +20 para algo de padding
+            int profesorWidth = resultado.Max(m => m.Profesor.Length) + 5; // +5 para algo de padding
+            int estudianteWidth = resultado.Max(m => m.Estudiante.Length) + 2; // +2 para algo de padding
+
+            // Imprimir los encabezados de las columnas
+            Console.WriteLine($"{"NombreAsignatura".PadRight(nombreAsignaturaWidth)}{"Profesor".PadRight(profesorWidth)}{"Estudiante".PadRight(estudianteWidth)}");
+
+            // Imprimir una línea divisoria
+            Console.WriteLine(new string('-', nombreAsignaturaWidth) + new string('-', profesorWidth) + new string('-', estudianteWidth));
+
+            // Imprimir los resultados
+            foreach (var item in resultado)
+            {
+                Console.WriteLine($"{item.NombreAsignatura.PadRight(nombreAsignaturaWidth)}{item.Profesor.PadRight(profesorWidth)}{item.Estudiante.PadRight(estudianteWidth)}");
+            }
+
+            return resultado;
+
         }
     }
 }
