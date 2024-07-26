@@ -8,6 +8,9 @@ ImprimirValores(matriculas.MatriculasCollection());
 
 //Asignatura Calculo
 ImprimirValoresAsignaturas(matriculas.MatriculasCalculo());
+
+ImprimirAsignaturasCsharp(matriculas.MatriculasContains());
+
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
 {
     Console.WriteLine("Collection\n");
@@ -28,10 +31,21 @@ void ImprimirValoresAsignaturas(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
+void ImprimirAsignaturasCsharp(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
 Console.WriteLine("Estado All\n");
 Console.WriteLine("¿Todas las matriculas tienen estado?:" + matriculas.MatriculasEstadoAll());
 
 Console.WriteLine("Semestre Any\n");
-Console.WriteLine("'¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
+Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
+
 
 
