@@ -36,6 +36,32 @@ namespace CampusVirtualLinq.Clases
             && matriculas.Profesor == "Pedro Diaz"
             select matriculas;
         }
+
+        //Operador All
+        public string MatriculasEstadoAll()
+        {
+            //Extension method
+            var all = matriculasColection.Any(p => p.Estado != null && p.Estado != "");
+
+            // Convertir el valor booleano a una cadena
+            string resultado = all ? "Si" : "No";
+
+            // Retornar el resultado como una cadena
+            return resultado;
+        }
+
+        //Operador Any
+        public string MatriculasEstadoAny()
+        {
+            //Extension method
+            var any = matriculasColection.Any(p => p.SemestreInscripcion == 3);
+
+            // Convertir el valor booleano a una cadena
+            string resultado = any ? "Si" : "No";
+
+            // Retornar el resultado como una cadena
+            return resultado;
+        }
     }
 }
 

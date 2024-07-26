@@ -28,4 +28,10 @@ void ImprimirValoresAsignaturas(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
+Console.WriteLine("Estado All\n");
+Console.WriteLine("¿Todas las matriculas tienen estado?:" + matriculas.MatriculasEstadoAll());
+
+Console.WriteLine("Semestre Any\n");
+Console.WriteLine("'¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
+
 
