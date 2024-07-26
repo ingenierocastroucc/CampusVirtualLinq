@@ -69,6 +69,66 @@ namespace CampusVirtualLinq.Clases
             //Extension method
             return matriculasColection.Where(p => p.NombreAsignatura.Contains ("C#"));
         }
+
+        //Operador OrderBy
+        public IEnumerable<Matriculas> MatriculasOrderBy()
+        {
+            //Extension method
+            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).OrderBy(p => p.Estudiante);
+
+            //Extension method descending
+            //OrderByDescending
+            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).OrderByDescending(p => p.Estudiante);
+
+            //Query method
+            //return from matriculas in matriculasColection
+            //       where matriculas.NombreAsignatura == "C#"
+            //       orderby matriculas.Estudiante
+            //       select matriculas;
+
+            //Query method descending
+            //OrderByDescending
+            return from matriculas in matriculasColection
+                   where matriculas.NombreAsignatura == "C#"
+                   orderby matriculas.Estudiante descending
+                   select matriculas;
+        }
+
+        //Operador Take
+        public IEnumerable<Matriculas> MatriculasTake()
+        {
+            //Extension method
+            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Take(2);
+            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).TakeLast(2);
+
+            //Query method
+            return (from matriculas in matriculasColection
+                   where matriculas.NombreAsignatura == "C#"
+                   orderby matriculas.Estudiante
+                   select matriculas).Take(2);
+
+        }
+
+        //Operador TakeWhile
+        public IEnumerable<Matriculas> MatriculasTakeWhile()
+        {
+            var fechaRegsitro = new DateTime(2024, 7, 23);
+            //Extension method
+            return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).TakeWhile(p => p.FechaRegistro == fechaRegsitro);
+        }
+
+        //Operador Skip
+        public IEnumerable<Matriculas> MatriculasSkip()
+        {
+            //Extension method
+            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Skip(2);
+
+            //Query method Take/Skip
+            return (from matriculas in matriculasColection
+                    where matriculas.NombreAsignatura == "C#"
+                    orderby matriculas.Estudiante
+                    select matriculas).Take(2).Skip(1);
+        }
     }
 }
 

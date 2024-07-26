@@ -11,6 +11,14 @@ ImprimirValoresAsignaturas(matriculas.MatriculasCalculo());
 
 ImprimirAsignaturasCsharp(matriculas.MatriculasContains());
 
+ImprimirAsignaturasCsharpOrder(matriculas.MatriculasOrderBy());
+
+ImprimirAsignaturasMatriculasTake(matriculas.MatriculasTake());
+
+ImprimirAsignaturasMatriculasTakeWhile(matriculas.MatriculasTakeWhile());
+
+ImprimirAsignaturasSkip(matriculas.MatriculasSkip());
+
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
 {
     Console.WriteLine("Collection\n");
@@ -34,6 +42,46 @@ void ImprimirValoresAsignaturas(IEnumerable<Matriculas> listaMatriculas)
 void ImprimirAsignaturasCsharp(IEnumerable<Matriculas> listaMatriculas)
 {
     Console.WriteLine("Matriculas con asignaturas C#\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+void ImprimirAsignaturasCsharpOrder(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C# ordenadas\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+void ImprimirAsignaturasMatriculasTake(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, primeros dos estudiantes\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+void ImprimirAsignaturasMatriculasTakeWhile(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, estudiantes matriculados en la fecha '2024-07-23'\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+void ImprimirAsignaturasSkip(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, aplicando Take/Skip\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
