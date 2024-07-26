@@ -67,7 +67,6 @@ namespace CampusVirtualLinq.Clases
         public IEnumerable<Matriculas> MatriculasContains()
         {
             //Extension method
-            //return matriculasColection.Where(p=> p.NombreAsignatura == "Calculo");
             return matriculasColection.Where(p => p.NombreAsignatura.Contains ("C#"));
         }
     }
