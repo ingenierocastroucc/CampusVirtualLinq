@@ -161,6 +161,33 @@ namespace CampusVirtualLinq.Clases
             return resultado;
 
         }
+
+        //Operador Count
+        public int MatriculasCount()
+        {
+            //Extension method
+            // var count = matriculasColection.Count(p => p.EstudianteId == 1 && p.NombreAsignatura.Contains("C#"));
+            //return count;
+
+            //Query Count
+            return (from matriculas in matriculasColection
+                    where matriculas.EstudianteId == 1 && matriculas.NombreAsignatura == "C#"
+                    orderby matriculas.Estudiante
+                    select matriculas).Count();
+        }
+
+        public long MatriculasLongCount()
+        {
+            //Extension method
+            var count = matriculasColection.LongCount(p => p.EstudianteId == 1 && p.NombreAsignatura.Contains("C#"));
+            return count;
+
+            //Query Count
+            //return (from matriculas in matriculasColection
+            //        where matriculas.EstudianteId == 1 && matriculas.NombreAsignatura == "C#"
+            //        orderby matriculas.Estudiante
+            //        select matriculas).Count();
+        }
     }
 }
 

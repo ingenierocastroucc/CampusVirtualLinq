@@ -98,5 +98,9 @@ Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semes
 Console.WriteLine("Matriculas Select\n");
 var matriculasList = matriculas.MatriculasSelect();
 
+Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo:" + matriculas.MatriculasCount());
+
+Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo 'LongCount':" + matriculas.MatriculasLongCount());
+
 
 
