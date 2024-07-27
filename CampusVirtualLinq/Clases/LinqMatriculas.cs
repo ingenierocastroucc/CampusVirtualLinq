@@ -1,4 +1,22 @@
-﻿using System;
+﻿#region Documentación
+/************************************************************************************************************
+ * Propiedad intelectual de Pedro Castro
+ ************************************************************************************************************                                                                 
+ * Descripcion   : Clase usada como logica de negocio para la contencion de todos los operadores
+ * 
+ * Autor         : Pedro Castro                                                                                         
+ * Fecha         : <25/07/2016>                                                                             
+ *                                                                                                           
+ * Fecha         Autor (Alias)      Modificación                                                               
+ * ===========   ============       ========================================================================= 
+ * 25/07/2016     Pedro Castro       1. Creación del LinqMatriculas
+ * 26/07/2016     Pedro Castro       2. Se agregan operadores, el codigo comentado es perfectamente funcional 
+ * se encunetra comentado dado que es un codigo didagtico, con la finalidad de dar a conocer las habilidades
+ * del desarrollador y dado que solo se permite un return en la funcion
+ ***********************************************************************************************************/
+#endregion Documentación
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +29,7 @@ namespace CampusVirtualLinq.Clases
     {
         private List<Matriculas> matriculasColection = new List<Matriculas>();
 
+        //Logica que obtiene data del .json
         public LinqMatriculas()
         {
             using (StreamReader reader = new StreamReader("Matriculas.json"))
@@ -20,6 +39,7 @@ namespace CampusVirtualLinq.Clases
             }
         }
 
+        //Creacion de la coleccion
         public IEnumerable<Matriculas> MatriculasCollection()
         {
             return matriculasColection;
@@ -131,6 +151,7 @@ namespace CampusVirtualLinq.Clases
                     select matriculas).Take(2).Skip(1);
         }
 
+        //Operador select
         public IEnumerable<Matriculas> MatriculasSelect()
         {
             //Query method
@@ -176,6 +197,7 @@ namespace CampusVirtualLinq.Clases
                     select matriculas).Count();
         }
 
+        //Operador LongCount
         public long MatriculasLongCount()
         {
             //Extension method
