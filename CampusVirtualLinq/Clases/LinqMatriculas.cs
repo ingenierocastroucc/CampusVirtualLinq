@@ -13,6 +13,7 @@
  * 26/07/2016     Pedro Castro       2. Se agregan operadores, el codigo comentado es perfectamente funcional 
  * se encunetra comentado dado que es un codigo didagtico, con la finalidad de dar a conocer las habilidades
  * del desarrollador y dado que solo se permite un return en la funcion
+ * 30/07/2016     Pedro Castro       3. Refactor de codigo para obtener el menor numero de lineas comentadas, sin afectar la funcionalidad
  ***********************************************************************************************************/
 #endregion Documentación
 
@@ -44,15 +45,17 @@ namespace CampusVirtualLinq.Clases
         {
             return matriculasColection;
         }
-        
-        //Operador where
-        public IEnumerable<Matriculas> MatriculasCalculo()
-        {
-            //Extension method
-            //return matriculasColection.Where(p=> p.NombreAsignatura == "Calculo");
-            //return matriculasColection.Where(p => p.SemestreInscripcion == 3 && p.Profesor == "Pedro Diaz");
 
-            //Query method
+        //Operador where extension method
+        public IEnumerable<Matriculas> MatriculasCalculoExtensionMethod()
+        {
+            return matriculasColection.Where(p => p.SemestreInscripcion == 3 && p.Profesor == "Pedro Diaz");
+
+        }
+
+        //Operador where query method
+        public IEnumerable<Matriculas> MatriculasCalculoQueryMethod()
+        {
             return from matriculas in matriculasColection where matriculas.SemestreInscripcion == 3
             && matriculas.Profesor == "Pedro Diaz"
             select matriculas;
@@ -91,23 +94,16 @@ namespace CampusVirtualLinq.Clases
             return matriculasColection.Where(p => p.NombreAsignatura.Contains ("C#"));
         }
 
-        //Operador OrderBy
-        public IEnumerable<Matriculas> MatriculasOrderBy()
+        //Operador OrderBy extension method
+        public IEnumerable<Matriculas> MatriculasOrderByExtensionMethod()
         {
             //Extension method
-            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).OrderBy(p => p.Estudiante);
+            return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).OrderBy(p => p.Estudiante);
+        }
 
-            //Extension method descending
-            //OrderByDescending
-            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).OrderByDescending(p => p.Estudiante);
-
-            //Query method
-            //return from matriculas in matriculasColection
-            //       where matriculas.NombreAsignatura == "C#"
-            //       orderby matriculas.Estudiante
-            //       select matriculas;
-
-            //Query method descending
+        //Operador OrderBy query method
+        public IEnumerable<Matriculas> MatriculasOrderByQueryMethod()
+        {
             //OrderByDescending
             return from matriculas in matriculasColection
                    where matriculas.NombreAsignatura == "C#"
@@ -115,18 +111,23 @@ namespace CampusVirtualLinq.Clases
                    select matriculas;
         }
 
-        //Operador Take
-        public IEnumerable<Matriculas> MatriculasTake()
+        //Operador Take extension method
+        public IEnumerable<Matriculas> MatriculasTakeExtensionMethod()
         {
             //Extension method
-            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Take(2);
+            return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Take(2);
             //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).TakeLast(2);
 
+        }
+
+        //Operador Take query method
+        public IEnumerable<Matriculas> MatriculasTakeQueryMethod()
+        {
             //Query method
             return (from matriculas in matriculasColection
-                   where matriculas.NombreAsignatura == "C#"
-                   orderby matriculas.Estudiante
-                   select matriculas).Take(2);
+                    where matriculas.NombreAsignatura == "C#"
+                    orderby matriculas.Estudiante
+                    select matriculas).Take(2);
 
         }
 
@@ -138,13 +139,16 @@ namespace CampusVirtualLinq.Clases
             return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).TakeWhile(p => p.FechaRegistro == fechaRegsitro);
         }
 
-        //Operador Skip
-        public IEnumerable<Matriculas> MatriculasSkip()
+        //Operador Skip extension method
+        public IEnumerable<Matriculas> MatriculasSkipExtensionMethod()
         {
-            //Extension method
-            //return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Skip(2);
+            return matriculasColection.Where(p => p.NombreAsignatura.Contains("C#")).Skip(2);
+        }
 
-            //Query method Take/Skip
+        //Operador Skip query method 
+        public IEnumerable<Matriculas> MatriculasSkipQueryMethod()
+        {
+            //Take/Skip
             return (from matriculas in matriculasColection
                     where matriculas.NombreAsignatura == "C#"
                     orderby matriculas.Estudiante
@@ -183,32 +187,20 @@ namespace CampusVirtualLinq.Clases
 
         }
 
-        //Operador Count
+        //Operador Count query method
         public int MatriculasCount()
         {
-            //Extension method
-            // var count = matriculasColection.Count(p => p.EstudianteId == 1 && p.NombreAsignatura.Contains("C#"));
-            //return count;
-
-            //Query Count
             return (from matriculas in matriculasColection
                     where matriculas.EstudianteId == 1 && matriculas.NombreAsignatura == "C#"
                     orderby matriculas.Estudiante
                     select matriculas).Count();
         }
 
-        //Operador LongCount
+        //Operador LongCount extension method
         public long MatriculasLongCount()
         {
-            //Extension method
             var count = matriculasColection.LongCount(p => p.EstudianteId == 1 && p.NombreAsignatura.Contains("C#"));
             return count;
-
-            //Query Count
-            //return (from matriculas in matriculasColection
-            //        where matriculas.EstudianteId == 1 && matriculas.NombreAsignatura == "C#"
-            //        orderby matriculas.Estudiante
-            //        select matriculas).Count();
         }
 
         //Operador Min

@@ -11,6 +11,7 @@
  * ===========   ============       ========================================================================= 
  * 25/07/2016     Pedro Castro       1. Creación de Program.cs
  * 26/07/2016     Pedro Castro       2. Se agregan llamados a las funciones
+ * 30/07/2016     Pedro Castro       3. Refactor de codigo para obtener el menor numero de lineas comentadas, sin afectar la funcionalidad
  ***********************************************************************************************************/
 #endregion Documentación
 
@@ -22,17 +23,25 @@ LinqMatriculas matriculas = new LinqMatriculas();
 ImprimirValores(matriculas.MatriculasCollection());
 
 //Asignatura Calculo funcion where
-ImprimirValoresAsignaturas(matriculas.MatriculasCalculo());
+ImprimirValoresAsignaturasExtensionMethod(matriculas.MatriculasCalculoExtensionMethod());
+//Asignatura Calculo funcion where
+ImprimirValoresAsignaturasQueryMethod(matriculas.MatriculasCalculoQueryMethod());
 //Funcion Contains
 ImprimirAsignaturasCsharp(matriculas.MatriculasContains());
-//Funcion OrderBy
-ImprimirAsignaturasCsharpOrder(matriculas.MatriculasOrderBy());
-//Funcion Take
-ImprimirAsignaturasMatriculasTake(matriculas.MatriculasTake());
+//Funcion OrderBy extension method
+ImpAsignaturasOrderExtensionMethod(matriculas.MatriculasOrderByExtensionMethod());
+//Funcion OrderBy query method
+ImprimirAsignaturasOrderByQueryMethod(matriculas.MatriculasOrderByQueryMethod());
+//Funcion Take extension method
+ImprimirAsignaturasMatriculasTakeEx(matriculas.MatriculasTakeExtensionMethod());
+//Funcion Take query method
+ImprimirAsignaturasMatriculasTakeQry(matriculas.MatriculasTakeQueryMethod());
 //Funcion TakeWhile
 ImprimirAsignaturasMatriculasTakeWhile(matriculas.MatriculasTakeWhile());
+//Funcion Skip extension method
+ImprimirAsignaturasSkipExtensionMethod(matriculas.MatriculasSkipExtensionMethod());
 //Funcion Skip
-ImprimirAsignaturasSkip(matriculas.MatriculasSkip());
+ImprimirAsignaturasSkipQueryMethod(matriculas.MatriculasSkipQueryMethod());
 
 //Imprime en consola todos los valores de la coleccion
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
@@ -45,16 +54,28 @@ void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
-//Imprime en consola todos los valores de la coleccion, filtrados por asignatura
-void ImprimirValoresAsignaturas(IEnumerable<Matriculas> listaMatriculas)
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura extension method
+void ImprimirValoresAsignaturasExtensionMethod(IEnumerable<Matriculas> listaMatriculas)
 {
-    Console.WriteLine("Asignaturas\n");
+    Console.WriteLine("Asignaturas aplicacion del operador where extension method\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
         Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
     }
 }
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura query method
+void ImprimirValoresAsignaturasQueryMethod(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Asignaturas aplicacion del operador where query method\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura
 void ImprimirAsignaturasCsharp(IEnumerable<Matriculas> listaMatriculas)
@@ -67,10 +88,10 @@ void ImprimirAsignaturasCsharp(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
-//Imprime en consola todos los valores de la coleccion, filtrados por asignatura y con un orden especifico
-void ImprimirAsignaturasCsharpOrder(IEnumerable<Matriculas> listaMatriculas)
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura y con un orden especifico extension method
+void ImpAsignaturasOrderExtensionMethod(IEnumerable<Matriculas> listaMatriculas)
 {
-    Console.WriteLine("Matriculas con asignaturas C# ordenadas\n");
+    Console.WriteLine("Matriculas con asignaturas C# ordenadas, extension method\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
@@ -78,10 +99,33 @@ void ImprimirAsignaturasCsharpOrder(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
-//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, tomando valores especificos
-void ImprimirAsignaturasMatriculasTake(IEnumerable<Matriculas> listaMatriculas)
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura y con un orden especifico query method
+void ImprimirAsignaturasOrderByQueryMethod(IEnumerable<Matriculas> listaMatriculas)
 {
-    Console.WriteLine("Matriculas con asignaturas C#, primeros dos estudiantes\n");
+    Console.WriteLine("Matriculas con asignaturas C# ordenadas, query method\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, tomando valores especificos extension method
+void ImprimirAsignaturasMatriculasTakeEx(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, primeros dos estudiantes, extension method\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, tomando valores especificos query method
+void ImprimirAsignaturasMatriculasTakeQry(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, primeros dos estudiantes, query method\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
@@ -100,10 +144,21 @@ void ImprimirAsignaturasMatriculasTakeWhile(IEnumerable<Matriculas> listaMatricu
     }
 }
 
-//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, evitando tomar valores especificos
-void ImprimirAsignaturasSkip(IEnumerable<Matriculas> listaMatriculas)
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, evitando tomar valores especificos extension method
+void ImprimirAsignaturasSkipExtensionMethod(IEnumerable<Matriculas> listaMatriculas)
 {
-    Console.WriteLine("Matriculas con asignaturas C#, aplicando Take/Skip\n");
+    Console.WriteLine("Matriculas con asignaturas C#, aplicando Take/Skip, extension method\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura, evitando tomar valores especificos query method
+void ImprimirAsignaturasSkipQueryMethod(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, aplicando Take/Skip, query method\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
