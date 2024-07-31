@@ -47,6 +47,8 @@ ImprimirAsignaturasGroupBy(matriculas.MatriculasGroupBy());
 //Funcion ToLookUp
 var matriculasLookUp = matriculas.MatriculasToLookUp();
 ImprimirAsignaturasLookUp(matriculasLookUp, 400000);
+//Funcion Join
+ImprimirAsignaturasJoin(matriculas.MatriculasJoin());
 
 //Imprime en consola todos los valores de la coleccion
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
@@ -198,6 +200,16 @@ void ImprimirAsignaturasLookUp(ILookup<int, Matriculas> listaMatriculas, int val
          Console.WriteLine("{0, -60}, {1, 15}, {2,15}", item.NombreAsignatura, item.ValorMatricula, item.Estudiante);
      }
 }
+//Imprime el join de dos collecciones unidas por la asignatura Id
+void ImprimirAsignaturasJoin(IEnumerable<Matriculas> listaMatriculas)
+{
+    Console.WriteLine("Matriculas con asignaturas C#, aplicando Join, extension method\n");
+    Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
+    foreach (var item in listaMatriculas)
+    {
+        Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}", item.NombreAsignatura, item.Profesor, item.FechaRegistro.ToShortDateString(), item.Estudiante);
+    }
+}
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion select
 Console.WriteLine("Matriculas Select\n");
@@ -231,3 +243,4 @@ Console.WriteLine("Promedio total del valor matriculado en la coleccion de datos
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura id 2, concatenando el nombre de la asignatura
 Console.WriteLine("Concatenacion  de la descripcion para la asignatura SQL, en matriculas registradas:\n" + matriculas.MatriculasAggregate() + "\n");
+
