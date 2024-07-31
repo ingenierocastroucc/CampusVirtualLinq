@@ -44,6 +44,9 @@ ImprimirAsignaturasSkipExtensionMethod(matriculas.MatriculasSkipExtensionMethod(
 ImprimirAsignaturasSkipQueryMethod(matriculas.MatriculasSkipQueryMethod());
 //Funcion GroupBy
 ImprimirAsignaturasGroupBy(matriculas.MatriculasGroupBy());
+//Funcion ToLookUp
+var matriculasLookUp = matriculas.MatriculasToLookUp();
+ImprimirAsignaturasLookUp(matriculasLookUp, 400000);
 
 //Imprime en consola todos los valores de la coleccion
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
@@ -174,7 +177,7 @@ void ImprimirAsignaturasGroupBy(IEnumerable<IGrouping<int, Matriculas>> listaMat
     // Imprime los índices de los grupos
     foreach (var group in listaMatriculas)
     {
-        Console.WriteLine("");
+        Console.WriteLine("Agrupacion por valores de las matriculas:");
         Console.WriteLine($"Grupo: {group.Key}");
         Console.WriteLine("{0, -60}, {1, 15}, {2,15}\n", "Nombre Asignatura", "Valor Matricula", "Estudiante");
 
@@ -183,6 +186,17 @@ void ImprimirAsignaturasGroupBy(IEnumerable<IGrouping<int, Matriculas>> listaMat
             Console.WriteLine("{0, -60}, {1, 15}, {2,15}", item.NombreAsignatura, item.ValorMatricula, item.Estudiante);
         }
     }
+}
+
+//Imprime en consola todos los valores de la coleccion, buscando por el valor de la matricula
+void ImprimirAsignaturasLookUp(ILookup<int, Matriculas> listaMatriculas, int valorMatricula)
+{
+     Console.WriteLine("Asignaturas LookUp:\n");
+     Console.WriteLine("{0, -60}, {1, 15}, {2,15}\n", "Nombre Asignatura", "Valor Matricula", "Estudiante");
+     foreach (var item in listaMatriculas[valorMatricula])
+     {
+         Console.WriteLine("{0, -60}, {1, 15}, {2,15}", item.NombreAsignatura, item.ValorMatricula, item.Estudiante);
+     }
 }
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion select

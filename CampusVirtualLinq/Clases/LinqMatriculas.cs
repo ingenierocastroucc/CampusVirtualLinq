@@ -264,6 +264,14 @@ namespace CampusVirtualLinq.Clases
             return matriculasColection.GroupBy(p => p.ValorMatricula);
 
         }
+
+        //Operador ToLookUp
+        public ILookup<int, Matriculas> MatriculasToLookUp()
+        {
+            // Agrupa las matriculas por el ValorMatricula method extension
+            return matriculasColection.ToLookup(p => p.ValorMatricula);
+
+        }
     }
 }
 
