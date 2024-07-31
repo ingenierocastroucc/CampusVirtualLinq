@@ -42,6 +42,8 @@ ImprimirAsignaturasMatriculasTakeWhile(matriculas.MatriculasTakeWhile());
 ImprimirAsignaturasSkipExtensionMethod(matriculas.MatriculasSkipExtensionMethod());
 //Funcion Skip
 ImprimirAsignaturasSkipQueryMethod(matriculas.MatriculasSkipQueryMethod());
+//Funcion GroupBy
+ImprimirAsignaturasGroupBy(matriculas.MatriculasGroupBy());
 
 //Imprime en consola todos los valores de la coleccion
 void ImprimirValores(IEnumerable<Matriculas> listaMatriculas)
@@ -166,6 +168,24 @@ void ImprimirAsignaturasSkipQueryMethod(IEnumerable<Matriculas> listaMatriculas)
     }
 }
 
+//Imprime en consola todos los valores de la coleccion, agrupados por el valor de la matricula
+
+void ImprimirAsignaturasGroupBy(IEnumerable<IGrouping<int, Matriculas>> listaMatriculas)
+{
+    // Imprime los índices de los grupos
+    foreach (var group in listaMatriculas)
+    {
+        Console.WriteLine("");
+        Console.WriteLine($"Grupo: {group.Key}");
+        Console.WriteLine("{0, -60}, {1, 15}, {2,15}\n", "Nombre Asignatura", "Valor Matricula", "Estudiante");
+
+        foreach (var item in group)
+        {
+            Console.WriteLine("{0, -60}, {1, 15}, {2,15}", item.NombreAsignatura, item.ValorMatricula, item.Estudiante);
+        }
+    }
+}
+
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion select
 Console.WriteLine("Matriculas Select\n");
 var matriculasList = matriculas.MatriculasSelect();
@@ -198,6 +218,3 @@ Console.WriteLine("Promedio total del valor matriculado en la coleccion de datos
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura id 2, concatenando el nombre de la asignatura
 Console.WriteLine("Concatenacion  de la descripcion para la asignatura SQL, en matriculas registradas:\n" + matriculas.MatriculasAggregate() + "\n");
-
-
-

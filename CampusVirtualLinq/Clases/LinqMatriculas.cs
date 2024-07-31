@@ -256,6 +256,14 @@ namespace CampusVirtualLinq.Clases
             });
             return asignaturasMatriculadas;
         }
+
+        //Operador GroupBy
+        public IEnumerable<IGrouping<int, Matriculas>> MatriculasGroupBy()
+        {
+            // Agrupa las matriculas por el ValorMatricula method extension
+            return matriculasColection.GroupBy(p => p.ValorMatricula);
+
+        }
     }
 }
 
