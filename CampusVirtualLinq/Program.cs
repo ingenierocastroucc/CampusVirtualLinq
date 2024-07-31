@@ -203,7 +203,7 @@ void ImprimirAsignaturasLookUp(ILookup<int, Matriculas> listaMatriculas, int val
 //Imprime el join de dos collecciones unidas por la asignatura Id
 void ImprimirAsignaturasJoin(IEnumerable<Matriculas> listaMatriculas)
 {
-    Console.WriteLine("Matriculas con asignaturas C#, aplicando Join, extension method\n");
+    Console.WriteLine("Matriculas con asignaturas Id 1 y Id 2, aplicando Join, extension method\n");
     Console.WriteLine("{0, -15}, {1, 15}, {2,15}, {3,15}\n", "NombreAsignatura", "Profesor", "FechaRegistro", "Estudiante");
     foreach (var item in listaMatriculas)
     {
