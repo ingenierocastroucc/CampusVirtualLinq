@@ -169,7 +169,6 @@ void ImprimirAsignaturasSkipQueryMethod(IEnumerable<Matriculas> listaMatriculas)
 }
 
 //Imprime en consola todos los valores de la coleccion, agrupados por el valor de la matricula
-
 void ImprimirAsignaturasGroupBy(IEnumerable<IGrouping<int, Matriculas>> listaMatriculas)
 {
     // Imprime los índices de los grupos
