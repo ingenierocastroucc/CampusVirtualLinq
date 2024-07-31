@@ -272,6 +272,17 @@ namespace CampusVirtualLinq.Clases
             return matriculasColection.ToLookup(p => p.ValorMatricula);
 
         }
+
+        //Operador Join 
+        public IEnumerable<Matriculas> MatriculasJoin()
+        {
+            //ExthensionMethod
+            var matriculaEstandar = matriculasColection.Where(p=>p.EstudianteId == 1);
+
+            var matriculaPremium = matriculasColection.Where(p => p.EstudianteId == 2);
+
+            return matriculaEstandar.Join(matriculaPremium, p => p.AsignaturaId, x => x.AsignaturaId, (p, x) => x);
+        }
     }
 }
 
