@@ -15,7 +15,8 @@
       "Alta"
     ],
     "estudiante": "Daniel Castillo",
-    "estudianteId": 1
+    "estudianteId": 1,
+    "ValorMatricula": 400000 
   },
   {
     "matriculaId": 1,
@@ -33,7 +34,8 @@
       "Alta"
     ],
     "estudiante": "Daniel Castillo",
-    "estudianteId": 1
+    "estudianteId": 1,
+    "ValorMatricula": 350000
   },
   {
     "matriculaId": 1,
@@ -51,7 +53,8 @@
       "Alta"
     ],
     "estudiante": "Daniel Castillo",
-    "estudianteId": 1
+    "estudianteId": 1,
+    "ValorMatricula": 450000
   },
   {
     "matriculaId": 2,
@@ -69,7 +72,9 @@
       "Alta"
     ],
     "estudiante": "Andrea Carvajal",
-    "estudianteId": 2
+    "estudianteId": 2,
+    "ValorMatricula": 400000
+
   },
   {
     "matriculaId": 2,
@@ -87,7 +92,8 @@
       "Alta"
     ],
     "estudiante": "Andrea Carvajal",
-    "estudianteId": 2
+    "estudianteId": 2,
+    "ValorMatricula": 350000
   },
   {
     "matriculaId": 2,
@@ -105,7 +111,8 @@
       "Alta"
     ],
     "estudiante": "Andrea Carvajal",
-    "estudianteId": 2
+    "estudianteId": 2,
+    "ValorMatricula": 450000
   },
   {
     "matriculaId": 3,
@@ -123,7 +130,8 @@
       "Alta"
     ],
     "estudiante": "Bairon Duvan",
-    "estudianteId": 3
+    "estudianteId": 3,
+    "ValorMatricula": 400000
   },
   {
     "matriculaId": 3,
@@ -141,7 +149,8 @@
       "Alta"
     ],
     "estudiante": "Bairon Duvan",
-    "estudianteId": 3
+    "estudianteId": 3,
+    "ValorMatricula": 350000
   },
   {
     "matriculaId": 3,
@@ -159,6 +168,7 @@
       "Alta"
     ],
     "estudiante": "Bairon Duvan",
-    "estudianteId": 3
+    "estudianteId": 3,
+    "ValorMatricula": 450000
   }
 ]

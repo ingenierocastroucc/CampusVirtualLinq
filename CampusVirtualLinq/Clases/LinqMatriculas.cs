@@ -218,6 +218,44 @@ namespace CampusVirtualLinq.Clases
             var fechaRegsitro = matriculasColection.Max(p => p.FechaRegistro.ToShortDateString());
             return fechaRegsitro;
         }
+
+        //Operador Sum
+        public double MatriculasSum()
+        {
+            //Extension method
+            var cantidaAsignatura = matriculasColection.Where(p => p.AsignaturaId == 2).Sum(p=>p.ValorMatricula);
+
+            return cantidaAsignatura;
+        }
+
+        //Operador Average
+        public double MatriculasAverage()
+        {
+            //Extension method
+
+            var cantidaAsignatura = matriculasColection.Where(p => p.AsignaturaId == 2).Average(p => p.ValorMatricula);
+            return cantidaAsignatura;
+        }
+
+        //Operador Aggregate
+        public string MatriculasAggregate()
+        {
+            //Extension method
+
+            var asignaturasMatriculadas = matriculasColection.Where(p => p.AsignaturaId == 2).Aggregate("", (AsignaturasMatriculas, next) =>
+            {
+                if (AsignaturasMatriculas != "")
+                {
+                    AsignaturasMatriculas += "\n" + next.DescripcionMatricula;
+                }
+                else 
+                {
+                    AsignaturasMatriculas += next.DescripcionMatricula;
+                }
+                return AsignaturasMatriculas;
+            });
+            return asignaturasMatriculadas;
+        }
     }
 }
 

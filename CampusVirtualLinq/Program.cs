@@ -176,19 +176,28 @@ Console.WriteLine("¿Todas las matriculas tienen estado?:" + matriculas.Matricul
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion Any
 Console.WriteLine("Semestre Any\n");
-Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny());
+Console.WriteLine("¿Existe almenos una matricula realizada para el tercer semestre?:" + matriculas.MatriculasEstadoAny() + "\n");
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion Count
-Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo:" + matriculas.MatriculasCount());
+Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo:" + matriculas.MatriculasCount() + "\n");
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion LongCount
-Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo 'LongCount':" + matriculas.MatriculasLongCount());
+Console.WriteLine("Cantidad de Materias matriculadas para el estudiante Daniel Castillo 'LongCount':" + matriculas.MatriculasLongCount() + "\n");
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion Min
-Console.WriteLine("Fecha menor de registro de matricula, registrada:" + matriculas.MatriculasMin());
+Console.WriteLine("Fecha menor de registro de matricula, registrada:" + matriculas.MatriculasMin() + "\n");
 
 //Imprime en consola todos los valores de la coleccion, filtrados por asignatura, por la funcion Max
-Console.WriteLine("Fecha mayor de registro de matricula, registrada:" + matriculas.MatriculasMax());
+Console.WriteLine("Fecha mayor de registro de matricula, registrada:" + matriculas.MatriculasMax() + "\n");
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura id 2, sumando el valor total de la asignatura matriculada
+Console.WriteLine("Cantidad total del valor matriculado en la coleccion de datos para la asignatura SQL, en matriculas registradas:" + matriculas.MatriculasSum() + "\n");
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura id 2, obteniendo el promedio de la asignatura matriculada
+Console.WriteLine("Promedio total del valor matriculado en la coleccion de datos para la asignatura SQL, en matriculas registradas:" + matriculas.MatriculasAverage() + "\n");
+
+//Imprime en consola todos los valores de la coleccion, filtrados por asignatura id 2, concatenando el nombre de la asignatura
+Console.WriteLine("Concatenacion  de la descripcion para la asignatura SQL, en matriculas registradas:\n" + matriculas.MatriculasAggregate() + "\n");
 
 
 

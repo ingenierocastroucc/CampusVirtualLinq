@@ -82,6 +82,11 @@ namespace CampusVirtualLinq.Clases
         /// </summary>
         public int EstudianteId { get; set; }
 
+        /// <summary>
+        /// Propiedad para obtener el valor de la matricula
+        /// </summary>
+        public int ValorMatricula { get; set; }
+
 
     }
 }
