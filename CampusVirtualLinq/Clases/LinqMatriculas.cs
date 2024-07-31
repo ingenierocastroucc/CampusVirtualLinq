@@ -268,7 +268,7 @@ namespace CampusVirtualLinq.Clases
         //Operador ToLookUp
         public ILookup<int, Matriculas> MatriculasToLookUp()
         {
-            // Agrupa las matriculas por el ValorMatricula method extension
+            //Relaiza la busqueda de las matriculas por el ValorMatricula method extension
             return matriculasColection.ToLookup(p => p.ValorMatricula);
 
         }
