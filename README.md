@@ -13,5 +13,5 @@ Contiene codigo C# para LINQ:
 * !IMPORTANTE¡ el archivo Matriculas.json, en algunos casos debe ser ubicado en la ruta, que tenga configurada como raiz la maquina local, desde donde se vaya a ejecutar el programa, por ejemplo "C:\Users\CarpetaContenedoraDelProyecto\bin\Debug\net6.0" 
 
 
-Resibira actualizaciones semanales o diarias: **Este readme.md se realiza con la finalidad de informar**.
+Recibira actualizaciones semanales o diarias: **Este readme.md se realiza con la finalidad de informar**.
 
